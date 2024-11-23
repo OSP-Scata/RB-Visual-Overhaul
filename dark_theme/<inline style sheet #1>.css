@@ -1,0 +1,35 @@
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+
+#boxes #dialog2 {
+  background:#313338;
+  width:326px; 
+  height:140px;
+  padding:50px 0 20px 25px;
+  position: fixed;
+  border-radius: 12px;
+  border:solid;
+  border-color:#1e1f22;
+  	border-width: 2px;
+  color:#dbdee1;
+}
+
+
