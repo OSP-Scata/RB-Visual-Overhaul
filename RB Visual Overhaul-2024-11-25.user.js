@@ -72,7 +72,7 @@
             if (userData[0].innerText != "Предупреждения:") {
                 var numberOfPosts1 = parseInt(userData[1].nextSibling.data) // число постов в темах
                 var topicRank = tdPostDetails.innerText;
-                if (!topicRank.toLowerCase().includes('администратор') && !topicRank.toLowerCase().includes('модератор')) {
+                if (!topicRank.toLowerCase().includes('администратор') && !topicRank.toLowerCase().includes('модератор') && !topicRank.toLowerCase().includes('узник')) {
                     for (var i = 0; i < data.length; i++) {
                         if (numberOfPosts1 < data[i]['postNumber']) {
                             var rankIcon = profile.querySelector('img[src*="./images/ranks/"]')
@@ -103,7 +103,7 @@
             var numberOfPosts2 = parseInt(userDataInUsers[1].innerText); // число постов в списке пользователей
             var usersRank = userDataInUsers[2].innerHTML; // ранг в списке пользователей
             var rankText = usersRank.split("\"")[usersRank.split("\"").length-2];
-            if ((rankText) && (!rankText.toLowerCase().includes('администратор') && !rankText.toLowerCase().includes('модератор'))) {
+            if ((rankText) && (!rankText.toLowerCase().includes('администратор') && !rankText.toLowerCase().includes('модератор') && !rankText.toLowerCase().includes('узник'))) {
                 for (var i = 0; i < data.length; i++) {
                     if (numberOfPosts2 < data[i]['postNumber']) {
                         var rankIcon = td.querySelector('img[src*="./images/ranks/"]')
@@ -126,7 +126,7 @@
     var userProfileRank = document.querySelector('td.postdetails'); // ранг в профиле
     var canProfile = userProfileRank ? userProfileRank.innerText : ""; // тест на возможность спарсить ранг (если мы не на странице профиля)
     if (canProfile) {
-        if (!userProfileRank.innerText.toLowerCase().includes('администратор') && !userProfileRank.innerText.toLowerCase().includes('модератор')) {
+        if (!userProfileRank.innerText.toLowerCase().includes('администратор') && !userProfileRank.innerText.toLowerCase().includes('модератор') && !userProfileRank.toLowerCase().includes('узник')) {
             var bGen = document.querySelectorAll('b.gen')
             bGen.forEach((tag) => {
             if (!isNaN(parseInt(tag.innerText))) {
