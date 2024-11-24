@@ -21,9 +21,10 @@
     var clock = document.createElement('div');
     clock.innerHTML = '<div id="clock"> \
     <center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="140" height="140"> \
+    <param name="wmode" value="transparent" /> \
 	<param name="movie" value="http://www.rusbionicle.com/clock/clockfinal2.swf" /> \
 	<param name="quality" value="high" /> \
-	<embed src="http://www.rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="140"></embed> \
+	<embed src="http://www.rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="140" wmode="transparent"></embed> \
 	</object> \
 	</center> \
     </div>';
