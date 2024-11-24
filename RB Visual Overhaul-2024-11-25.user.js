@@ -13,6 +13,7 @@
 // @grant        GM_addStyle
 // @grant        GM_getValue
 // @grant        GM_setValue
+// @license      MIT
 // ==/UserScript==
 
 (async() => {
