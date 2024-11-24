@@ -45,26 +45,12 @@
         }
     else {
         GM_addStyle(darkTheme);
-        /* тёмная версия часов сейчас не работает из-за CORS
-        document.querySelector('#clock').innerHTML = '<center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="140" height="140"> \
-        <param name="movie" value="https://github.com/OSP-Scata/RB-Visual-Overhaul/raw/refs/heads/main/dark_theme/clock_dark.swf" /> \
-	    <param name="quality" value="high" /> \
-	    <embed src="https://github.com/OSP-Scata/RB-Visual-Overhaul/raw/refs/heads/main/dark_theme/clock_dark.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="140"></embed> \
-	    </object> \
-	    </center>' */
         button.innerText = "Светлая тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
     }
     function toggle(){
     if(currentTheme == 'light') {
         GM_addStyle(darkTheme);
-        /* тёмная версия часов сейчас не работает из-за CORS
-        document.querySelector('#clock').innerHTML = '<center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="140" height="140"> \
-        <param name="movie" value="https://github.com/OSP-Scata/RB-Visual-Overhaul/raw/refs/heads/main/dark_theme/clock_dark.swf" /> \
-	    <param name="quality" value="high" /> \
-	    <embed src="https://github.com/OSP-Scata/RB-Visual-Overhaul/raw/refs/heads/main/dark_theme/clock_dark.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="140"></embed> \
-	    </object> \
-	    </center>' */
         GM_setValue("theme", "dark");
     }
     else {
