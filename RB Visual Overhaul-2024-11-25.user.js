@@ -37,7 +37,6 @@
     var header = document.querySelector('#logodesc');
     header.appendChild(button);
     var currentTheme = await GM_getValue("theme");
-    console.log(currentTheme)
     button.addEventListener('click', toggle );
     if (currentTheme == 'light') {
         button.innerText = "Тёмная тема";
@@ -57,7 +56,7 @@
         GM_addStyle(lightTheme);
         GM_setValue("theme", "light");
     }
-}
+	}
 
     const data = JSON.parse(GM_getResourceText("DATABASE"));
 
