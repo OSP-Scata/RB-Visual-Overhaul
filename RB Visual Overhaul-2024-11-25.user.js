@@ -5,6 +5,7 @@
 // @description  replaces old rank icons and adds new ones, brings back the clock, etc.
 // @author       Lemniscata
 // @match        https://www.rusbionicle.com/*
+// @match        https://rusbionicle.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rusbionicle.com
 // @resource     DEFAULT_CSS https://www.rusbionicle.com/forumsbio/style.php?&id=8&lang=ru
 // @resource     IMPORTED_CSS https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/dark_theme/cssoverride.css
@@ -23,9 +24,9 @@
     clock.innerHTML = '<div id="clock"> \
     <center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="150" height="150"> \
     <param name="wmode" value="transparent" /> \
-	<param name="movie" value="https://www.rusbionicle.com/clock/clockfinal2.swf" /> \
+	<param name="movie" value="https://rusbionicle.com/clock/clockfinal2.swf" /> \
 	<param name="quality" value="high" /> \
-	<embed src="https://www.rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150" wmode="transparent"></embed> \
+	<embed src="https://rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150" wmode="transparent"></embed> \
 	</object> \
 	</center> \
     </div>';
