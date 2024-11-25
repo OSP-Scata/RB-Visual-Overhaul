@@ -21,11 +21,11 @@
     // часы
     var clock = document.createElement('div');
     clock.innerHTML = '<div id="clock"> \
-    <center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="140" height="140"> \
+    <center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="150" height="150"> \
     <param name="wmode" value="transparent" /> \
-	<param name="movie" value="http://www.rusbionicle.com/clock/clockfinal2.swf" /> \
+	<param name="movie" value="https://www.rusbionicle.com/clock/clockfinal2.swf" /> \
 	<param name="quality" value="high" /> \
-	<embed src="http://www.rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="140" height="140" wmode="transparent"></embed> \
+	<embed src="https://www.rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150" wmode="transparent"></embed> \
 	</object> \
 	</center> \
     </div>';
@@ -38,8 +38,9 @@
     var header = document.querySelector('#logodesc');
     header.appendChild(button);
     var currentTheme = await GM_getValue("theme");
+    var state = false;
     button.addEventListener('click', toggle );
-    if (currentTheme == 'light') {
+    if (currentTheme == 'light' && state == false) {
         button.innerText = "Тёмная тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
         }
@@ -49,14 +50,18 @@
         button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
     }
     function toggle(){
-    if(currentTheme == 'light') {
-        GM_addStyle(darkTheme);
-        GM_setValue("theme", "dark");
-    }
-    else {
-        GM_addStyle(lightTheme);
-        GM_setValue("theme", "light");
-    }
+        if(currentTheme == 'light' && state == false) {
+            GM_addStyle(darkTheme);
+            GM_setValue("theme", "dark");
+            state = true;
+        }
+        else {
+            GM_addStyle(lightTheme);
+            GM_setValue("theme", "light");
+            button.innerText = "Светлая тема";
+            button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
+            state = false;
+        }
 	}
 
     const data = JSON.parse(GM_getResourceText("DATABASE"));
