@@ -126,7 +126,8 @@
     var userProfileRank = document.querySelector('td.postdetails'); // ранг в профиле
     var canProfile = userProfileRank ? userProfileRank.innerText : ""; // тест на возможность спарсить ранг (если мы не на странице профиля)
     if (canProfile) {
-        if (!userProfileRank.innerText.toLowerCase().includes('администратор') && !userProfileRank.innerText.toLowerCase().includes('модератор') && !userProfileRank.innerText.toLowerCase().includes('узник')) {
+        userProfileRank = userProfileRank.innerText;
+        if (!userProfileRank.toLowerCase().includes('администратор') && !userProfileRank.toLowerCase().includes('модератор') && !userProfileRank.toLowerCase().includes('узник')) {
             var bGen = document.querySelectorAll('b.gen')
             bGen.forEach((tag) => {
             if (!isNaN(parseInt(tag.innerText))) {
