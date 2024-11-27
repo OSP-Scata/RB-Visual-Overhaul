@@ -7,7 +7,7 @@
 // @match        https://www.rusbionicle.com/*
 // @match        https://rusbionicle.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=rusbionicle.com
-// @resource     DEFAULT_CSS https://www.rusbionicle.com/forumsbio/style.php?&id=8&lang=ru
+// @resource     DEFAULT_CSS https://rusbionicle.com/forumsbio/style.php?&id=8&lang=ru
 // @resource     IMPORTED_CSS https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/dark_theme/cssoverride.css
 // @resource     DATABASE https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/new_ranks/ranks-database.json
 // @grant        GM_getResourceText
@@ -39,29 +39,34 @@
     var header = document.querySelector('#logodesc');
     header.appendChild(button);
     var currentTheme = await GM_getValue("theme");
-    var state = false;
-    button.addEventListener('click', toggle );
-    if (currentTheme == 'light' && state == false) {
+    var clicked = false;
+    button.addEventListener('click', toggle);
+    if (currentTheme == 'light' || clicked) {
         button.innerText = "Тёмная тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
         }
-    else {
+    else if (currentTheme == 'dark' || clicked) {
         GM_addStyle(darkTheme);
         button.innerText = "Светлая тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
     }
+    console.log(currentTheme, clicked);
     function toggle(){
-        if(currentTheme == 'light' && state == false) {
+        if(currentTheme == 'light' || clicked) {
             GM_addStyle(darkTheme);
-            GM_setValue("theme", "dark");
-            state = true;
-        }
-        else {
-            GM_addStyle(lightTheme);
-            GM_setValue("theme", "light");
             button.innerText = "Светлая тема";
             button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
-            state = false;
+            clicked = true;
+            GM_setValue("theme", "dark");
+            console.log(currentTheme, clicked);
+        }
+        else if (currentTheme == 'dark' || !clicked) {
+            GM_addStyle(lightTheme);
+            button.innerText = "Тёмная тема";
+            button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
+            clicked = false;
+            GM_setValue("theme", "light");
+            console.log(currentTheme, clicked);
         }
 	}
 
@@ -159,6 +164,14 @@
        })
     }
     }
+    // иконки онлайн-оффлайн
+    document.querySelectorAll('img[src*="whosonline.gif"]').forEach((image) => {
+			image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/theme/images/whosonline.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/whosonline.png');
+		})
+    document.querySelectorAll('img[src*="./styles/subsilver2/imageset/ru/icon_user"]').forEach((image) => {
+			image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_offline.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_offline.png');
+            image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_online.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_online.png');
+		})
 /*
     // реплейс существующих иконок рангов (старое)
     function updateImagesSrc() {
