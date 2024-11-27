@@ -167,10 +167,13 @@
     document.querySelectorAll('img[src*="whosonline.gif"]').forEach((image) => {
 			image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/theme/images/whosonline.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/whosonline.png');
 		})
-    document.querySelectorAll('img[src*="./styles/subsilver2/imageset/ru/icon_user"]').forEach((image) => {
+    document.querySelectorAll('img[src*="./styles/subsilver2/imageset/ru/"]').forEach((image) => {
 			image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_offline.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_offline.png');
+        image.src = image.src.replace('https://www.rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_offline.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_offline.png');
             image.src = image.src.replace('https://rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_online.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_online.png');
+        image.src = image.src.replace('https://www.rusbionicle.com/forumsbio/styles/subsilver2/imageset/ru/icon_user_online.gif', 'https://raw.githubusercontent.com/OSP-Scata/RB-Visual-Overhaul/refs/heads/main/icons/icon_user_online.png');
 		})
+
 /*
     // реплейс существующих иконок рангов (старое)
     function updateImagesSrc() {
