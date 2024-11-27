@@ -24,9 +24,9 @@
     clock.innerHTML = '<div id="clock"> \
     <center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="150" height="150"> \
     <param name="wmode" value="transparent" /> \
-	<param name="movie" value="https://rusbionicle.com/clock/clockfinal2.swf" /> \
+	<param name="movie" value="/clock/clockfinal2.swf" /> \
 	<param name="quality" value="high" /> \
-	<embed src="https://rusbionicle.com/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150" wmode="transparent"></embed> \
+	<embed src="/clock/clockfinal2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="150" height="150" wmode="transparent"></embed> \
 	</object> \
 	</center> \
     </div>';
