@@ -39,34 +39,36 @@
     var header = document.querySelector('#logodesc');
     header.appendChild(button);
     var currentTheme = await GM_getValue("theme");
-    var clicked = false;
+    var state;
     button.addEventListener('click', toggle);
-    if (currentTheme == 'light' || clicked) {
+    if (currentTheme == 'light') {
         button.innerText = "Тёмная тема";
+        state = false;
         button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
         }
-    else if (currentTheme == 'dark' || clicked) {
+    else if (currentTheme == 'dark') {
         GM_addStyle(darkTheme);
+        state = true;
         button.innerText = "Светлая тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
     }
-    console.log(currentTheme, clicked);
+    console.log(currentTheme, state);
     function toggle(){
-        if(currentTheme == 'light' || clicked) {
+        if (!state) {
             GM_addStyle(darkTheme);
             button.innerText = "Светлая тема";
             button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
-            clicked = true;
+            state = true;
             GM_setValue("theme", "dark");
-            console.log(currentTheme, clicked);
+            console.log(currentTheme, state);
         }
-        else if (currentTheme == 'dark' || !clicked) {
+        else {
             GM_addStyle(lightTheme);
             button.innerText = "Тёмная тема";
             button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
-            clicked = false;
+            state = false;
             GM_setValue("theme", "light");
-            console.log(currentTheme, clicked);
+            console.log(currentTheme, state);
         }
 	}
 
