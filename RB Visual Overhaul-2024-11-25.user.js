@@ -52,7 +52,6 @@
         button.innerText = "Светлая тема";
         button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
     }
-    console.log(currentTheme, state);
     function toggle(){
         if (!state) {
             GM_addStyle(darkTheme);
@@ -60,7 +59,6 @@
             button.style.cssText = 'float: right; margin: 20px; background-color: unset; color: unset';
             state = true;
             GM_setValue("theme", "dark");
-            console.log(currentTheme, state);
         }
         else {
             GM_addStyle(lightTheme);
@@ -68,7 +66,6 @@
             button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
             state = false;
             GM_setValue("theme", "light");
-            console.log(currentTheme, state);
         }
 	}
 
