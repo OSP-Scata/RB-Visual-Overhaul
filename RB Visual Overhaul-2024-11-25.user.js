@@ -41,11 +41,11 @@
     var currentTheme = await GM_getValue("theme");
     var state;
     button.addEventListener('click', toggle);
-    if (currentTheme == 'light') {
+    if (currentTheme == 'light' || typeof currentTheme == 'undefined') {
         button.innerText = "Тёмная тема";
         state = false;
         button.style.cssText = 'float: right; margin: 20px; background-color: #383a40; color: #dbdee1';
-        }
+    }
     else if (currentTheme == 'dark') {
         GM_addStyle(darkTheme);
         state = true;
