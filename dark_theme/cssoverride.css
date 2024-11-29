@@ -93,7 +93,7 @@ body {
 
 #logodesc {
 	padding: 0px;
-    margin: 0px;
+	margin: 0 25px;
 	background: #313338;
     border-bottom: 1px solid #313338;
 }
@@ -355,7 +355,7 @@ th {
 	color: #dbdee1;
 	font-size: 1.1em;
 	font-weight: bold;
-	background-color: #313338;
+	background-color: #232428;
 	white-space: nowrap;
 	padding: 7px 5px;
   background-image: none;
@@ -575,6 +575,23 @@ textarea {
 		border-radius: 2px;
 }
 
+.post:hover {
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #232428;
+	color: #dbdee1;
+		border-radius: 2px;
+}
+.post:focus {
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #232428;
+	color: #dbdee1;
+		border-radius: 2px;
+}
+
 .btnbbcode {
 	color: #000000;
 	font-weight: normal;
@@ -597,7 +614,8 @@ textarea {
 	cursor: pointer;
 	padding: 1px 5px;
 	font-size: 1.1em;
-		border-radius: 4px;
+    border-radius: 4px;
+	color: #232428;
 }
 
 .btnmain:hover {
@@ -623,6 +641,18 @@ textarea {
 }
 
 .btnfile {
+	font-weight: normal;
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+		border-color: #232428;
+	padding: 1px 5px;
+	font-size: 1.1em;
+	color: #dbdee1;
+			border-radius: 4px;
+}
+
+.btnfile:hover {
 	font-weight: normal;
 	background-color: #383a40;
 	border-style: solid;
@@ -894,7 +924,7 @@ pre {
 }
 
 .reflected {
-	border-radius: 50%;
+	border-radius: none;
 }
 
 canvas {
@@ -939,3 +969,54 @@ canvas {
   color:#dbdee1;
 }
 
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #dbdee1;
+  border-radius: 50%;
+  display: inline-block;
+} 
+
+a.postbtn {
+	color: #000000;
+	font-family: "Lucida Grande", Verdana, Helvetica, sans-serif;
+	background-color: #b5bac1;
+	border: none;
+	border-radius: 2px;
+	font-weight: bold;
+	background-color: #b5bac1;
+	border: none;
+	cursor: pointer;
+	padding: 1px 5px;
+	font-size: 1.1em;
+    border-radius: 4px;
+	white-space:nowrap;
+}
+	
+a.postbtn:hover {
+        border-color: #E35000;
+	color: #E35000;
+        background-color: #FAFAFA;
+		text-decoration: none;
+}
+
+.profile {
+	background-color: #2b2d31;
+}
+
+.postauthor {
+	color: #dbdee1;
+}
+
+input {
+	background-color: #383a40;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #232428;
+	color: #dbdee1;
+		border-radius: 2px;
+}
+
+input.btnlite {
+	color: #313338;
+}
