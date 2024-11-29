@@ -122,6 +122,7 @@ body {
 	font-weight: normal;
 	font-size: 10px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: darkred;
 }
 
 #pageheader { }
@@ -355,7 +356,8 @@ td {
 }
 td.profile {
 	padding: 4px;
-	background-color: none;
+	background: url('styles/subsilver2/theme/images/_row1.gif');
+	background-repeat: repeat-x;
 }
 
 .tablebg {
@@ -861,9 +863,4 @@ pre {
 
 .row_index_recent {
   line-height: 1.3;
-}
-
-/* Additions for transition between light/dark themes */
-div.forumrules {
-	color: darkred;
 }
