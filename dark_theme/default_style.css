@@ -355,6 +355,7 @@ td {
 }
 td.profile {
 	padding: 4px;
+	background-color: none;
 }
 
 .tablebg {
@@ -860,4 +861,9 @@ pre {
 
 .row_index_recent {
   line-height: 1.3;
+}
+
+/* Additions for transition between light/dark themes */
+div.forumrules {
+	color: darkred;
 }
